@@ -75,14 +75,29 @@ const AdminPaseCreate = () => {
           returnToView("/admin/verpase");
         }
       } else {
-        alert("No se pueden crear Pases de accesos con fechas pasadas");
+        swal({
+          title: 'Error',
+          text: 'No se pueden crear Pases de accesos con fechas pasadas',
+          icon: 'error',
+          buttons: 'Aceptar'
+        })         
       }
     } catch (error) {
       if (error.response && !error.response.data.success) {
-        alert(error.response.data.error);
+        swal({
+          title: 'Error',
+          text: error.response.data.error,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
         location.reload();
       } else {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
         location.reload();
       }
     }

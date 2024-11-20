@@ -42,9 +42,19 @@ const AdminCreate = () => {
     e.preventDefault();
     try {
       if (casa === "0") {
-        alert("El numero de casa no puede ser 0");
+        swal({
+          title: 'Error',
+          text: 'El numero de casa no puede ser 0',
+          icon: 'error',
+          buttons: 'Aceptar'
+        })        
       } else if (moroso === "si" && role === "admin") {
-        alert("Un moroso no puede ser administrador");
+        swal({
+          title: 'Error',
+          text: 'Un moroso no puede ser administrador',
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       } else {
         let objAgregar = {
           idPrivada: privada,
@@ -68,10 +78,20 @@ const AdminCreate = () => {
       }
     } catch (error) {
       if (error.response && !error.response.data.success) {
-        alert(error.response.data.error);
+        swal({
+          title: 'Error',
+          text: error.response.data.error,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })        
         location.reload();
       } else {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })       
         location.reload();
       }
     }

@@ -16,7 +16,12 @@ export const Privadas = async () => {
       privadas = response.data.privadas;
     }
   } catch (error) {
-    alert(error.message);
+    swal({
+      title: 'Error',
+      text: error.message,
+      icon: 'error',
+      buttons: 'Aceptar'
+    })
   }
   return privadas;
 };
@@ -35,7 +40,12 @@ export const PrivadasSeguridad = async () => {
       privadas = response.data.privadas;
     }
   } catch (error) {
-    alert(error.message);
+    swal({
+      title: 'Error',
+      text: error.message,
+      icon: 'error',
+      buttons: 'Aceptar'
+    })
   }
   return privadas;
 };

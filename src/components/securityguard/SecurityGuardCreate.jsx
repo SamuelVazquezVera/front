@@ -94,10 +94,20 @@ const SecurityGuardCreate = () => {
       }
     } catch (error) {
       if (error.response && !error.response.data.success) {
-        alert(error.response.data.error);
+        swal({
+          title: 'Error',
+          text: error.response.data.error,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
         location.reload();
       } else {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
         location.reload();
       }
     }

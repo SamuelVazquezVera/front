@@ -18,7 +18,12 @@ export const Usuario = async (id) => {
       usuario = response.data.usuario;
     }
   } catch (error) {
-    alert(error.message);
+    swal({
+      title: 'Error',
+      text: error.message,
+      icon: 'error',
+      buttons: 'Aceptar'
+    })
   }
   return usuario;
 };
@@ -40,7 +45,12 @@ export const AdminPaseButtons = ({ id }) => {
           location.reload();
         }
       } catch (error) {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       }
     }
   };
@@ -75,7 +85,12 @@ export const AdminButtons = ({ id }) => {
           location.reload();
         }
       } catch (error) {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       }
     }
   };
@@ -129,7 +144,12 @@ export const UsuarioButtons = ({ _id }) => {
           location.reload();
         }
       } catch (error) {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       }
     }
   };
@@ -153,10 +173,20 @@ export const UsuarioButtons = ({ _id }) => {
         }
       } catch (error) {
         if (error.response && !error.response.data.success) {
-          alert(error.response.data.error);
+          swal({
+            title: 'Error',
+            text: error.response.data.error,
+            icon: 'error',
+            buttons: 'Aceptar'
+          })          
           location.reload();
         } else {
-          alert(error.message);
+          swal({
+            title: 'Error',
+            text: error.message,
+            icon: 'error',
+            buttons: 'Aceptar'
+          })
           location.reload();
         }
       }

@@ -34,7 +34,12 @@ const SuperAdminView = () => {
           setUserFilter(data);
         }
       } catch (error) {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       } finally {
         setUserLoading(false);
       }

@@ -43,7 +43,12 @@ const AdminUpdate = () => {
           setMoroso(m);
         }
       } catch (error) {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })        
       } finally {
         setUserLoading(false);
       }
@@ -55,7 +60,12 @@ const AdminUpdate = () => {
     e.preventDefault();
     try {
       if (moroso === "si" && role === "admin") {
-        alert("Un moroso no puede ser administrador");
+        swal({
+          title: 'Error',
+          text: 'Un moroso no puede ser administrador',
+          icon: 'error',
+          buttons: 'Aceptar'
+        })
       } else {
         const response = await axios.post(
           `${uri}usuario/changeusuario`,
@@ -76,10 +86,20 @@ const AdminUpdate = () => {
       }
     } catch (error) {
       if (error.response && !error.response.data.success) {
-        alert(error.response.data.error);
+        swal({
+          title: 'Error',
+          text: error.response.data.error,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })          
         location.reload();
       } else {
-        alert(error.message);
+        swal({
+          title: 'Error',
+          text: error.message,
+          icon: 'error',
+          buttons: 'Aceptar'
+        })  
         location.reload();
       }
     }
