@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Privadas } from "../../utils/PrivadasHelper";
 import axios from "axios";
+import swal from 'sweetalert'
 
 const SuperAdminCreate = () => {
   const [privadas, setPrivadas] = useState([]);

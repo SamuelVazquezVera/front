@@ -2,6 +2,7 @@ import { useAuth } from "../../context/authContext";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { AdminButtons } from "../../utils/UsuarioHelper";
+import swal from 'sweetalert'
 
 const AdminView = () => {
   const [userfilter, setUserFilter] = useState([]);

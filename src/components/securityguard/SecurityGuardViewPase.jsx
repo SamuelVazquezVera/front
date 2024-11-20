@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import swal from 'sweetalert'
 
 const SecurityGuardViewPase = () => {
   const [pasefilter, setPaseFilter] = useState([]);

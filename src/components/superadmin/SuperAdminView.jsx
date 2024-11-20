@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { UsuarioButtons } from "../../utils/UsuarioHelper";
+import swal from 'sweetalert'
 
 const SuperAdminView = () => {
   const [userfiler, setUserFilter] = useState([]);

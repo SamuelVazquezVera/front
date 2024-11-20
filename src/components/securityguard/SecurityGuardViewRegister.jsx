@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { SeguridadButtons } from "../../utils/UsuarioHelper";
+import swal from 'sweetalert'
 
 const SecurityGuardViewRegister = () => {
   const [visitafilter, setVisitaFilter] = useState([]);

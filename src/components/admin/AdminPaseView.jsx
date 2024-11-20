@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { AdminPaseButtons } from "../../utils/UsuarioHelper";
 import { useAuth } from "../../context/authContext";
+import swal from 'sweetalert'
 
 const AdminPaseView = () => {
   const [pasefilter, setPaseFilter] = useState([]);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import swal from 'sweetalert'
 
 const AdminCreate = () => {
   const { user } = useAuth();

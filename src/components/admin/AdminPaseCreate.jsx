@@ -3,6 +3,7 @@ import { useAuth } from "../../context/authContext";
 import { useNavigate } from "react-router-dom";
 import Datepicker from "react-tailwindcss-datepicker";
 import axios from "axios";
+import swal from 'sweetalert'
 
 const AdminPaseCreate = () => {
   const { user } = useAuth();
